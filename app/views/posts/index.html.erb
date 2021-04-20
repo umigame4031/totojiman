@@ -1,1 +1,10 @@
-<h1>hello</h1>
+<div class="contents row">
+  <% @posts.each do |post| %>
+    <div class="content_post">
+      <p><%= post.text %></p>
+      <span class="fish">
+        <%= post.fish %>
+      </span>
+    </div>
+  <% end %>
+</div>
