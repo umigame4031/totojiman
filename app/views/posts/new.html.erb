@@ -1,8 +1,8 @@
 <div class="post-contents">
-    <h2 class="post-title">投稿内容を入力</h2>
+    <h2 class="post-request">投稿内容を入力してください</h2>
     <%= form_with model: @post, local: true do |f| %>
 
-    <%= render 'shared/error_messages', model: f.object %>
+    <%# <%= render 'shared/error_messages', model: f.object %> %>
 
     <%# 投稿画像 %>
     <div class="img-upload">
@@ -19,44 +19,53 @@
     </div>
     <%# /投稿画像 %>
     <%# 投稿詳細 %>
-    <div class="new-post">
+    <div class="post-detail">
       <div class="weight-bold-text">
         タイトル
-        <span class="indispensable">必須</span>
       </div>
-      <%= f.text_area :title, class:"post-title", id:"post-title", placeholder:"タイトル（必須 40文字まで)", maxlength:"40" %>
-      <div class="items-explain">
-        <div class="weight-bold-text">
-          商品の説明
-          <span class="indispensable">必須</span>
-        </div>
-        <%= f.text_area :text, class:"items-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,rows:"7" ,maxlength:"1000" %>
+      <%= f.text_area :title, class:"post-title", id:"post-title", placeholder:"40文字まで", maxlength:"40" %>
+
+      <div class="weight-bold-text">
+        釣行日
       </div>
+      <%= f.date_select :date, class:"post-date", id:"post-date" %>
+
+      <div class="weight-bold-text">
+        釣行エリア
+      </div>
+      <%= f.collection_select(:area_id, Area.all, :id, :name, {}, {class:"select-box", id:"post-area"}) %>
+
+      <div class="weight-bold-text">
+        フィールド
+      </div>
+      <%= f.text_area :field, class:"post-field", id:"post-field", placeholder:"例：木曽川河口" %>
+
+      <div class="weight-bold-text">
+        ジャンル
+      </div>
+      <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"post-genre"}) %>
+
+      <div class="weight-bold-text">
+        魚種
+      </div>
+      <%= f.text_area :fish, class:"post-fish", id:"post-fish", placeholder:"例：シーバス３匹、黒鯛１匹" %>
+
+      <div class="weight-bold-text">
+        タックル
+      </div>
+      <%= f.text_area :tackle, class:"post-tackle", id:"post-tackle", placeholder:"例：ロッド-モアザン、リール-セルテート、ルアー-レンジバイブ" %>
+
+      <div class="weight-bold-text">
+        詳細
+      </div>
+      <%= f.text_area :text, class:"post-text", id:"post-text", placeholder:"例：夕まずめ２時間の釣果です。ボトムでのリフト&フォールで当たりが出ました。" %>
     </div>
     <%# /投稿詳細 %>
 
-    <%# 商品の詳細 %>
-    <div class="items-detail">
-      <div class="weight-bold-text">商品の詳細</div>
-      <div class="form">
-        <div class="weight-bold-text">
-          カテゴリー
-          <span class="indispensable">必須</span>
-        </div>
-        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
-        <div class="weight-bold-text">
-          商品の状態
-          <span class="indispensable">必須</span>
-        </div>
-        <%= f.collection_select(:state_id, State.all, :id, :name, {}, {class:"select-box", id:"item-sales-status"}) %>
-      </div>
-    </div>
-    <%# /商品の詳細 %>
-
     <%# 下部ボタン %>
-    <div class="sell-btn-contents">
-      <%= f.submit "出品する" ,class:"sell-btn" %>
-      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    <div class="post-btn-contents">
+      <%= f.submit "投稿する" ,class:"post-btn" %>
+      <%=link_to 'もどる', "#", class:"back-btn" %>
     </div>
     <%# /下部ボタン %>
     <% end %>
