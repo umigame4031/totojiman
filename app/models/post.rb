@@ -3,6 +3,8 @@ class Post < ApplicationRecord
   belongs_to :area
   belongs_to :genre
 
+  belongs_to :user
+
   has_one_attached :image
 
   validates :title, :date, :field, :fish, :tackle, :text, presence: true
