@@ -8,8 +8,7 @@ class User < ApplicationRecord
 
   mount_uploader :image, ImageUploader
 
-  validates :password, presence: true
-  validates :password_confirmation, presence: true
+  validates :password, format: { with: /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]/ }
   validates :nickname, presence: true, length: { maximum: 10 }
   validates :guide_permit, inclusion: { in: [true, false] }
 
