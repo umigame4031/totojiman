@@ -8,7 +8,9 @@ class User < ApplicationRecord
 
   mount_uploader :image, ImageUploader
 
-  validates :password, :password_confirmation, :nickname, presence: true
+  validates :password, presence: true
+  validates :password_confirmation, presence: true
+  validates :nickname, presence: true, length: { maximum: 10 }
   validates :guide_permit, inclusion: { in: [true, false] }
 
 end
