@@ -7,6 +7,6 @@ class Post < ApplicationRecord
 
   has_one_attached :image
 
-  validates :title, :date, :field, :fish, :tackle, :text, presence: true
+  validates :title, :date, :area_id, :genre_id, :field, :fish, :tackle, :text, :image, presence: true
   validates :area_id, :genre_id, numericality: { other_than: 1 } 
 end
