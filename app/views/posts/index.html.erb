@@ -1,5 +1,7 @@
+<%# 共通ヘッダー %>
 <%= render partial: "shared/header" %>
 
+<%# 投稿一覧表示 %>
 <div class='post-contents'>
   <% @posts.each do |post| %>
     <li class='list'>
@@ -14,3 +16,9 @@
     </li>
   <% end %>
 </div>
+
+<%# 新規投稿ページ遷移ボタン %>
+<%= link_to(new_post_path, class: 'new-post-btn') do %>
+  <span class='new-post-btn-text'>投稿する</span>
+  <%= image_tag 'icon_camera.png' , size: '185x50' ,class: "new-post-btn-icon" %>
+<% end %>
