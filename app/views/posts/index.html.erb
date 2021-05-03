@@ -6,7 +6,7 @@
   <% @posts.each do |post| %>
     <li class='list'>
       <div class='post-img-content'>
-        <%= image_tag post.image, class: "post-img" %>
+        <%= image_tag post.image.variant(resize: '500x500'), class: "post-img" %>
       </div>
       <div class='post-info'>
         <h3 class='post-title'>
