@@ -6,7 +6,7 @@
       <%= @post.title %>
     </h2>
     <div class="post-img-content">
-      <%= image_tag @post.image ,class:"post-box-img" %>
+      <%= image_tag @post.image.variant(resize: '500x500'),class:"post-box-img" %>
     </div>
 
     <table class="detail-table">
@@ -46,6 +46,7 @@
       </tbody>
     </table>
 
+    <div class="show-btns">
     <% if user_signed_in? && @post.user.guide_permit %>
       <% if current_user.id == @post.user.id %>
         <%= link_to "商品の編集", "#", method: :get, class: "post-red-btn" %>
@@ -55,4 +56,6 @@
         <%= link_to "ガイドを依頼する", "#", class:"post-red-btn"%>
       <% end %>
     <% end %>
+    </div>
   </div>
+</div>
