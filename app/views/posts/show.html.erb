@@ -51,7 +51,7 @@
       <% if current_user.id == @post.user.id %>
         <%= link_to "投稿の編集", edit_post_path, method: :get, class: "post-red-btn" %>
         <p class="or-text">or</p>
-        <%= link_to "削除", "#", method: :delete, class:"post-destroy" %>
+        <%= link_to "削除", post_path(@post.id), method: :delete, class:"post-destroy" %>
       <% else %>
         <%= link_to "ガイドを依頼する", "#", class:"post-red-btn"%>
       <% end %>
