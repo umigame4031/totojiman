@@ -25,7 +25,8 @@ class PostsController < ApplicationController
   end
 
   def update
-    if @item.update(item_params)
+    @post = Post.find(params[:id])
+    if @post.update(post_params)
       redirect_to root_path
     else
       render :edit
