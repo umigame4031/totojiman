@@ -49,7 +49,7 @@
     <div class="show-btns">
     <% if user_signed_in? && @post.user.guide_permit %>
       <% if current_user.id == @post.user.id %>
-        <%= link_to "商品の編集", "#", method: :get, class: "post-red-btn" %>
+        <%= link_to "投稿の編集", "#", method: :get, class: "post-red-btn" %>
         <p class="or-text">or</p>
         <%= link_to "削除", "#", method: :delete, class:"post-destroy" %>
       <% else %>
