@@ -10,5 +10,4 @@ class User < ApplicationRecord
 
   validates :nickname, presence: true, length: { maximum: 6 }
   validates :guide_permit, inclusion: { in: [true, false] }
-
 end

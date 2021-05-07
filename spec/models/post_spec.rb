@@ -61,22 +61,22 @@ RSpec.describe Post, type: :model do
       it 'area_idが数字以外では投稿できない' do
         @post.area_id = 'a'
         @post.valid?
-        expect(@post.errors.full_messages).to include("Area is not a number")
+        expect(@post.errors.full_messages).to include('Area is not a number')
       end
       it 'genre_idが数字以外では投稿できない' do
         @post.genre_id = 'a'
         @post.valid?
-        expect(@post.errors.full_messages).to include("Genre is not a number")
+        expect(@post.errors.full_messages).to include('Genre is not a number')
       end
       it 'area_idが1では投稿できない' do
         @post.area_id = 1
         @post.valid?
-        expect(@post.errors.full_messages).to include("Area must be other than 1")
+        expect(@post.errors.full_messages).to include('Area must be other than 1')
       end
       it 'genre_idが1では投稿できない' do
         @post.genre_id = 1
         @post.valid?
-        expect(@post.errors.full_messages).to include("Genre must be other than 1")
+        expect(@post.errors.full_messages).to include('Genre must be other than 1')
       end
       it 'userが紐付いていなければ投稿できない' do
         @post.user = nil

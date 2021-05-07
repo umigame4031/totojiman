@@ -45,7 +45,7 @@ RSpec.describe User, type: :model do
       it 'nicknameが7文字以上では登録できない' do
         @user.nickname = 'aaaaaaa'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Nickname is too long (maximum is 6 characters)")
+        expect(@user.errors.full_messages).to include('Nickname is too long (maximum is 6 characters)')
       end
       it '重複したemailが存在する場合登録できない' do
         @user.save
@@ -58,12 +58,12 @@ RSpec.describe User, type: :model do
         @user.password = '00000'
         @user.password_confirmation = '00000'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password is too short (minimum is 6 characters)")
+        expect(@user.errors.full_messages).to include('Password is too short (minimum is 6 characters)')
       end
       it 'guide_permitがnilでは登録できない' do
         @user.guide_permit = nil
         @user.valid?
-        expect(@user.errors.full_messages).to include("Guide permit is not included in the list")
+        expect(@user.errors.full_messages).to include('Guide permit is not included in the list')
       end
     end
   end
