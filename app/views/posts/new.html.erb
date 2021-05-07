@@ -2,7 +2,7 @@
     <h2 class="post-request">投稿内容を入力してください</h2>
     <%= form_with model: @post, local: true do |f| %>
 
-    <%# <%= render 'shared/error_messages', model: f.object %> 
+    <%= render 'shared/error_messages', model: f.object %> 
 
     <%# 投稿画像 %>
     <div class="img-upload">
