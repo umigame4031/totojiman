@@ -2,8 +2,10 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   has_many :posts
-  has_many :clients, class_name: "Order", foreign_key: "client_id"
-  has_many :contractors, class_name: "Order", foreign_key: "contractor_id"
+
+  has_many :orders
+  has_many :clients, class_name: "User", through: :orders
+  has_many :contractors, class_name: "User", through: :orders
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
