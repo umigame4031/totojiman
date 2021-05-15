@@ -4,15 +4,15 @@
       依頼内容の確認
     </h1>
     <%# 依頼内容の表示 %>
-    <div class='buy-item-info'>
-      <%= image_tag @item.image, class: 'buy-item-img' %>
-      <div class='buy-item-right-content'>
-        <h2 class='buy-item-text'>
-          <%= @item.name %>
+    <div class='buy-guide-info'>
+      <%= image_tag @guide.image, class: 'buy-guide-img' %>
+      <div class='buy-guide-right-content'>
+        <h2 class='buy-guide-text'>
+          <%= @guide.name %>
         </h2>
-        <div class='buy-item-price'>
-          <p class='item-price-text'>¥<%= @item.price %></p>
-          <p class='item-price-sub-text'><%= '配送料負担' %></p>
+        <div class='buy-guide-price'>
+          <p class='guide-price-text'>¥<%= @guide.price %></p>
+          <p class='guide-price-sub-text'><%= '配送料負担' %></p>
         </div>
       </div>
     </div>
@@ -24,14 +24,14 @@
         支払金額
       </h1>
       <p class='guide-payment-price'>
-        ¥<%= @item.price %>
+        ¥<%= @guide.price %>
       </p>
     </div>
     <%# /支払額の表示 %>
 
     <%= render 'shared/error_messages', model: @purchase_record_address %>
 
-    <%= form_with url: item_purchase_records_path, model: @purchase_record_address, id: 'charge-form', class: 'transaction-form-wrap',local: true do |f| %>
+    <%= form_with url: guide_purchase_records_path, model: @purchase_record_address, id: 'charge-form', class: 'transaction-form-wrap',local: true do |f| %>
     <%# カード情報の入力 %>
     <div class='credit-card-form'>
       <h1 class='info-input-haedline'>
