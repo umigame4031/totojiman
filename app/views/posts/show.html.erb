@@ -53,7 +53,7 @@
         <p class="or-text">or</p>
         <%= link_to "削除", post_path(@post.id), method: :delete, class:"post-destroy" %>
       <% else %>
-        <%= link_to "ガイドを依頼する", orders_path, class:"post-red-btn"%>
+        <%= link_to "ガイドを依頼する", post_orders_path(@post.id), class:"post-red-btn"%>
       <% end %>
     <% end %>
     </div>

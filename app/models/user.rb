@@ -4,8 +4,8 @@ class User < ApplicationRecord
   has_many :posts
 
   has_many :orders
-  has_many :clients, class_name: "User", through: :orders
-  has_many :contractors, class_name: "User", through: :orders
+  has_many :client_orders, class_name: "Order", :foreign_key => 'client_id'
+  has_many :contractor_orders, class_name: "Order", :foreign_key => 'contractor_id'
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
