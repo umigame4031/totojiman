@@ -5,11 +5,17 @@
     </h1>
     <%# 依頼内容の表示 %>
     <div class='buy-guide-info'>
+      <% if !@post.user.image.nil? %>
+        <%= image_tag @post.user.image, class: 'buy-guide-img' %>
+      <% end %>
       <div class='buy-guide-right-content'>
         <h2 class='buy-guide-text'>
           <%= @post.user.nickname %> 
         </h2>
+        <div class='buy-guide-price'>
+          <p class='guide-price-text'>¥<%= @post.user.nickname %>（１時間あたり）</p>
+        </div>
       </div>
     </div>
-    <%# /購入内容の表示 %>
+    <%# /依頼内容の表示 %>
 </div>
