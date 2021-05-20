@@ -5,8 +5,11 @@
     </h1>
     <%# 依頼内容の表示 %>
     <div class='buy-guide-info'>
-      
-        <%= image_tag 'profile_icon.png' %>
+      <% if @post.user.image? %>
+        <%= image_tag @post.user.image, class: 'buy-guide-img' %>
+      <% else %>
+        <%= image_tag 'default.png' %>
+      <% end %>
       <div class='buy-guide-right-content'>
         <h2 class='buy-guide-text'>
           <%= @post.user.nickname %> 
