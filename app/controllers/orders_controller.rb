@@ -4,12 +4,12 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @order = Order.new(order_params)
+    @order = Order.create(order_params)
   end
 
   private
 
   def order_params
-    params.require(:order).permit(:hour).merge(client_id: current_user.id, contractor_id: @post.user.id )
+    params.require(:order).permit(:guide_hour).merge(client_id: current_user.id, contractor_id: @post.user.id )
   end
 end
