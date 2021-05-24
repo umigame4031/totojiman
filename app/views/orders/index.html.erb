@@ -15,7 +15,7 @@
           <%= @post.user.nickname %> 
         </h2>
         <div class='buy-guide-price'>
-          <%= form_with model: @order, local: true do |f| %>
+          <%= form_with model: [@post, @order], local: true do |f| %>
           <p class='guide-price-text'>¥<%= @post.user.guide_fee %>（１時間あたり）</p>
           <p class='guide-hour-text'>ガイド希望時間</p>
           <p class='guide-hour'><%= f.text_field :guide_hour, id:"guide-hour" %>時間</p>
