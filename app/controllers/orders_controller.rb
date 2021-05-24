@@ -1,7 +1,13 @@
 class OrdersController < ApplicationController
   def index
     @post = Post.find(params[:post_id])
+    @order = Order.new
   end
+
+def new
+  @post = Post.find(params[:post_id])
+  @order = Order.new
+end
 
   def create
     @order = Order.create(order_params)
