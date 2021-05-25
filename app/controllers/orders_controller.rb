@@ -5,6 +5,7 @@ class OrdersController < ApplicationController
   end
 
   def create
+    @post = Post.find(params[:post_id])
     @order = Order.create(order_params)
   end
 
