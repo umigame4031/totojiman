@@ -6,7 +6,12 @@ class OrdersController < ApplicationController
 
   def create
     @post = Post.find(params[:post_id])
-    @order = Order.create(order_params)
+    @order = Order.new(order_params)
+    if @order.save
+      redirect_to root_path
+    else
+      render action: :index
+    end
   end
 
   private
