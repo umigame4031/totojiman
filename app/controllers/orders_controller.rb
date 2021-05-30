@@ -5,6 +5,7 @@ class OrdersController < ApplicationController
   end
 
   def create
+    binding.pry
     @post = Post.find(params[:post_id])
     @order = Order.new(order_params)
     if @order.save
