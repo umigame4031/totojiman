@@ -18,6 +18,6 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:guide_hour).merge(client_id: current_user.id, contractor_id: @post.user.id )
+    params.require(:order).permit(:guide_hour).merge(client_id: current_user.id, contractor_id: @post.user.id, token: params[:token] )
   end
 end
