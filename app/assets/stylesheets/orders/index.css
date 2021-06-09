@@ -1,0 +1,88 @@
+.transaction-contents {
+  width: 100vw;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+}
+
+.transaction-main {
+  background-color: #D7EEFF;
+  width: 70vw;
+  padding: 10vh 10vw;
+}
+
+.transaction-title-text {
+  text-align: center;
+  border-bottom: 2px solid #f5f5f5;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+
+
+.buy-guide-img {
+  height: 130px;
+  width: 200px;
+}
+
+.buy-guide-right-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.buy-guide-text {
+  font-size: 20px;
+}
+
+.buy-guide-price {
+  font-weight: bold;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.credit-card-form {
+  border-bottom: 2px solid #f5f5f5;
+  margin-top: 15px;
+  padding-bottom: 30px;
+}
+
+.available-card {
+  display: flex;
+  height: 35px;
+}
+
+.card-logo {
+  width: 40px;
+  margin: 5px 5px;
+}
+
+.input-expiration-date-wrap {
+  width: 100%;
+  display: flex;
+  text-align: center;
+  line-height: 55px;
+}
+
+.input-expiration-date {
+  width: 20%;
+  margin-top: 5px;
+  height: 48px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 16px;
+  resize: none;
+  line-height: 45px;
+  text-align: center;
+}
+
+.guide-confirm-btn {
+  width: 100%;
+  background: #228B22;
+  border: 1px solid #228B22;
+  color: #fff;
+  line-height: 48px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 50px;
+}
